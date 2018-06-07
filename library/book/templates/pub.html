@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<center>
+<table border=2>
+{% for var in pub_list %}
+<tr><td><a href={{ var.id }}>{{ var.name }}</a></td></tr>
+
+
+{% endfor %}
+</table>
+</center>
+</body>
+</html>
