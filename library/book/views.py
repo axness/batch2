@@ -5,6 +5,7 @@ from django.shortcuts import render
 from django.http.response import HttpResponse
 from book.models import Publisher
 from django.template import loader
+from book.forms import PulisherForm
 
 # Create your views here.
 
@@ -34,3 +35,11 @@ def pub_detail(request, *args, **kwargs):
     pub = Publisher.objects.get(id=kwargs['id'])
     return render(request, 'pub_detail.html', {'pub': pub})
 
+def add_pub(request):
+    form_obj = PulisherForm(request.GET)
+    import pdb; pdb.set_trace()
+    if form_obj.is_valid():
+        return HttpResponse("Successfully received the data")
+    form_obj = PulisherForm()
+    return render(request, 'addpub.html', {'form123': form_obj})
+    
