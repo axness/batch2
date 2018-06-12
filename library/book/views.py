@@ -10,7 +10,7 @@ from book.forms import PulisherForm
 # Create your views here.
 
 def index(request):
-    return HttpResponse("this is a index page")
+    return render(request, 'index.html')
 
 def get_name(request):
     return render(request, "name.html", {'name':'Nageswararao'})
@@ -33,13 +33,22 @@ def publishers(request):
     return render(request, 'pub.html', {'pub_list':pub_list}) 
 def pub_detail(request, *args, **kwargs):
     pub = Publisher.objects.get(id=kwargs['id'])
-    return render(request, 'pub_detail.html', {'pub': pub})
+    return render(request, 'pub_detail.html', {'pub123': pub})
 
 def add_pub(request):
     form_obj = PulisherForm(request.GET)
-    import pdb; pdb.set_trace()
     if form_obj.is_valid():
-        return HttpResponse("Successfully received the data")
+        form_obj.save()
+        """
+        data = form_obj.clean_data
+        db_obj = Publisher()
+        db_obj.name = data['publisher_name']
+        db_obj.url = data['url']
+        db_obj.email = data['email']
+        db_obj.save()
+        
+        """
+        return render(request, 'success.html', {'name': 'Publisher'})
     form_obj = PulisherForm()
     return render(request, 'addpub.html', {'form123': form_obj})
     

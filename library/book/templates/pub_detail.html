@@ -1,24 +1,19 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
+{% extends 'bootstrap/grid.html' %}
+
+{% block middle %}
 <center>
-<table border=2>
+<table border=2  width="100%" border="0" cellspacing="0" cellpadding="0">
    <tr>
        <td>
-       		<h3>{{ pub.name }}</h3>
+       		<h3>{{ pub123.name }}</h3>
        </td>
        <td>
-       		<h3>{{ pub.url }}</h3>
+       		<h3>{{ pub123.url }}</h3>
        	</td>
        	<td>
-       		<h3>{{ pub.email }}</h3>
+       		<h3>{{ pub123.email }}</h3>
        	</td>
    </tr>
 </table>
 </center>
-</body>
-</html>
+{% endblock %}

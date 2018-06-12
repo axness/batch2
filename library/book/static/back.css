@@ -1,0 +1,9 @@
+@charset "ISO-8859-1";
+
+.custom {
+	
+	background-color: aqua;
+	border-style: solid;
+	border-color: white;
+	border-width: 1px
+}

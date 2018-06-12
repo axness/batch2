@@ -1,18 +1,18 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
-<center>
-<table border=2>
-{% for var in pub_list %}
-<tr><td><a href={{ var.id }}>{{ var.name }}</a></td></tr>
+{% extends 'bootstrap/grid.html' %}
 
+{% block title %} publishers {% endblock %}
+
+{% block middle %}
+
+<center>
+<h2><p>The available publishers in the library are below: </p></h2>
+<table border=2  width=300 border="0" cellspacing="0" cellpadding="0">
+{% for var in pub_list %}
+<font size="20">
+<tr><td><center><a href={{ var.id }}>{{ var.name }}</a></center></td></tr>
+</font>
 
 {% endfor %}
 </table>
 </center>
-</body>
-</html>
+{% endblock %}

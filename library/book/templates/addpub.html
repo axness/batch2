@@ -1,9 +1,6 @@
-<!DOCTYPE html>
-<html>
-<body>
-<center>
-<h2>HTML Forms</h2>
+{% extends 'bootstrap/grid.html' %}
 
+{% block middle %}
 <form action="">
   <table>
   {{ form123 }}
@@ -11,5 +8,4 @@
   <input type="submit" value="ok">
 </form> 
 </center>
-</body>
-</html>
+{% endblock %}

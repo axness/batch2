@@ -1,10 +1,35 @@
 <!DOCTYPE html>
+{% load static %}
 <html>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{% static 'back.css' %}">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>{% block title %} base {% endblock %}</title>
 </head>
 <body>
+<div class='Containter'>
+  <div class='row'>
+      <center><h1>Library Management System</h1></center>  
+  </div>
+  <div class='row'>
+       <div class='custom col-md-2 col-sm-3 col-xs-6'>
+          <b></b><li><a href="{% url 'book:publisher' %}">list publishers</a></li><br>
+          <li><a href="../pub_detail.html">detail publishers</a></li><br>
+          <li><a href="../addpub.html">add publishers</a></li><br></b>
+       </div>
+       <div class='custom col-md-8 col-sm-6 col-xs-6'>
+          {% block middle %}
+          {% endblock %}
+       </div>
+       <div class='custom col-md-2 col-sm-3 col-xs-12'>
+          <p> 3rd column </p>
+       </div>
+  
+  </div>
+
+</div>
 
 </body>
 </html>
